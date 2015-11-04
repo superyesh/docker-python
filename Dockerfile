@@ -13,7 +13,9 @@ RUN yum -y update && yum install -y \
   tar \
   wget \
   xz \
-  zlib-dev
+  zlib-dev \
+  make
+
 
 # Install Python
 RUN mkdir -p /usr/src/python \
