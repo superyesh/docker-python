@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER yvijayak <yvijayak@adobe.com>
 
-ENV PYTHON_VERSION 2.7.6
+ENV PYTHON_VERSION 2.7.8
 
 # Install basic system libraries
 RUN yum -y update && yum install -y \
