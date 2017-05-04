@@ -19,7 +19,7 @@ RUN yum -y update && yum install -y \
 
 # Install Python
 RUN mkdir -p /usr/src/python \
-  && wget "https://www.python.org/ftp/python/2.7.6/Python-$PYTHON_VERSION.tar.xz" -O python.tar.xz \
+  && wget "https://www.python.org/ftp/python/2.7.8/Python-$PYTHON_VERSION.tar.xz" -O python.tar.xz \
   && tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
   && rm python.tar.xz \
   && cd /usr/src/python \
