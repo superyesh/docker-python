@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER yvijayak <yvijayak@adobe.com>
 
-ENV PYTHON_VERSION 2.7.6
+ENV PYTHON_VERSION 3.6.1
 
 # Install basic system libraries
 RUN yum -y update && yum install -y \
@@ -19,7 +19,7 @@ RUN yum -y update && yum install -y \
 
 # Install Python
 RUN mkdir -p /usr/src/python \
-  && wget "https://www.python.org/ftp/python/2.7.6/Python-$PYTHON_VERSION.tar.xz" -O python.tar.xz \
+  && wget "https://www.python.org/ftp/python/3.6.1/Python-$PYTHON_VERSION.tar.xz" -O python.tar.xz \
   && tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
   && rm python.tar.xz \
   && cd /usr/src/python \
