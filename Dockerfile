@@ -36,4 +36,4 @@ RUN mkdir -p /usr/src/python \
 # Install setuptools, pip and virtualenv
 RUN wget "https://bootstrap.pypa.io/ez_setup.py" -O - | python \
   && curl ""https://bootstrap.pypa.io/get-pip.py"" | python - \
-  && pip install virtualenv
+  && pip install --upgrade virtualenv
