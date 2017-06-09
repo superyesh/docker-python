@@ -45,8 +45,9 @@ RUN set -ex; \
 		--no-cache-dir \
 		"pip==$PYTHON_PIP_VERSION" \
 	; 
-RUN ln -s /usr/local/bin/pip /usr/bin/pip ;\
-	`which pip`  --version; \
+RUN ln -s /usr/local/bin/pip /usr/bin/pip 
+
+RUN  `which pip`  --version; \
 	\
 	find /usr/local -depth \
 		\( \
