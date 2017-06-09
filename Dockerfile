@@ -46,7 +46,7 @@ RUN set -ex; \
 		"pip==$PYTHON_PIP_VERSION" \
 	; \
 	ln -s /usr/local/bin/pip /usr/bin/pip ; \
-	pip --version; \
+	`which pip`  --version; \
 	\
 	find /usr/local -depth \
 		\( \
@@ -55,4 +55,4 @@ RUN set -ex; \
 			\( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py 
-RUN pip3 install --upgrade virtualenv
+RUN pip install --upgrade virtualenv
