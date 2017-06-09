@@ -4,7 +4,7 @@ MAINTAINER yvijayak <yvijayak@adobe.com>
 ENV PYTHON_VERSION 3.6.1
 
 # Install basic system libraries
-RUN yum -y update && yum install -y \
+RUN yum -y update && yum install -y libsqlite3-dev \
   bzip2-devel \
   ca-certificates \
   curl \
