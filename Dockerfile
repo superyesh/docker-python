@@ -44,7 +44,7 @@ RUN set -ex; \
 		--disable-pip-version-check \
 		--no-cache-dir \
 		"pip==$PYTHON_PIP_VERSION" \
-	; \
+	; 
 RUN ln -s /usr/local/bin/pip /usr/bin/pip ;\
 	`which pip`  --version; \
 	\
