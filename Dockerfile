@@ -34,6 +34,24 @@ RUN mkdir -p /usr/src/python \
   && rm -rf /usr/src/python
 
 # Install setuptools, pip and virtualenv
-RUN wget "https://bootstrap.pypa.io/ez_setup.py" -O - | python \
-  && curl ""https://bootstrap.pypa.io/get-pip.py"" | python - \
-  && pip3 install --upgrade virtualenv
+ENV PYTHON_PIP_VERSION 9.0.1
+
+RUN set -ex; \
+	\
+	wget -O get-pip.py 'https://bootstrap.pypa.io/get-pip.py'; \
+	\
+	python get-pip.py \
+		--disable-pip-version-check \
+		--no-cache-dir \
+		"pip==$PYTHON_PIP_VERSION" \
+	; \
+	pip --version; \
+	\
+	find /usr/local -depth \
+		\( \
+			\( -type d -a -name test -o -name tests \) \
+			-o \
+			\( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+		\) -exec rm -rf '{}' +; \
+	rm -f get-pip.py
+RUN pip3 install --upgrade virtualenv
